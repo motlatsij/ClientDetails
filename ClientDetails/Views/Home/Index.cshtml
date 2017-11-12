@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h3>Client Details</h3>
+<div ng-app="myApp" ng-controller="clientCtrl">
+
+    <input type="hidden" ng-model="client.Id" />
+    <div class="form-group">
+        <div class="col-md-2">
+            Surname
+        </div>
+        <div class="col-md-10">
+            <input type="text" ng-model="client.Surname" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            First Names
+        </div>
+        <div class="col-md-10">
+            <input type="text" ng-model="client.FirstNames" />
+        </div>
+        </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            Identity Type
+        </div>
+        <div class="col-md-10">
+            <select name="ngvalueselect" ng-model="client.IdentityTypeId">
+                <option ng-repeat="option in IdentityTypes" ng-value="option.Id">{{option.Type}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            Identity Number
+        </div>
+        <div class="col-md-10">
+            <input type="text" ng-model="client.IdentityNumber" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            Date of Birth
+        </div>
+        <div class="col-md-10">
+            <input type="date" ng-model="client.DateofBirth" />
+        </div>
+    </div>
+    <div class="form-group">
+        <button ng-click="updateClient()">Save</button>
+    </div>
+</div>
